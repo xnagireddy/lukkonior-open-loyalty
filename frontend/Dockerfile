@@ -1,9 +1,10 @@
 FROM node:5
 
-RUN apt-get update \
-    && apt-get install -y ruby-full rubygems \
-    && gem instal sass
-RUN npm install -g gulp node-sass yarn
+RUN apt-get update && apt-get install -y ruby-full rubygems
+RUN gem instal sass -v 3.4.2
+RUN npm install -g gulp
+RUN npm install -g node-sass-x64
+RUN npm install -g yarn@1.0.2
 COPY . /var/www
 WORKDIR /var/www
 EXPOSE 3000
